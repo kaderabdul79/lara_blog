@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\FrontController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('master');
+
+Route::get('/', [FrontController::class, 'index']);
+
+Route::get('/b', function () {
+    return view('partials.navbar');
 });
+// Route::get('/register', [FrontController::class, 'showRegistrationForm'])->name('register');
+// Route::post('/register', [FrontController::class, 'processRegistration']);
