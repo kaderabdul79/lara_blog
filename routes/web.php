@@ -12,12 +12,12 @@ use App\Http\Controllers\FrontController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Route::get('/test',function(){
+//     return view('register');
+// });
 
 Route::get('/', [FrontController::class, 'index']);
+Route::get('/post', [FrontController::class, 'post']);
 
-Route::get('/b', function () {
-    return view('partials.navbar');
-});
-// Route::get('/register', [FrontController::class, 'showRegistrationForm'])->name('register');
-// Route::post('/register', [FrontController::class, 'processRegistration']);
+Route::get('/register', [FrontController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [FrontController::class, 'processRegistration']);
