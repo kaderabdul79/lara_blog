@@ -49,6 +49,7 @@
 @include('layout.navbar')
 @yield('login')
 @yield('register')
+@yield('content')
 {{-- {{ dd($data) }} --}}
 <main class="container">
   @yield('jumbotron')

@@ -75,6 +75,24 @@ class FrontController extends Controller
     public function processLogin(Request $request){
      $email = $request->email;
      $password = $request->password;
-    return "Successfully logined";
+     $userinfo = [
+        'email' => $email
+     ];
+      $data = [];
+         $data['site_title'] = "Practice Blog Site";
+        $data['current_time'] = '23-07-22';
+        $data['links'] = [
+            'Facebook' => 'https://www.facebook.com',
+            'Github' => 'https://www.github.com',
+            'Youtube' => 'https://www.youtube.com',
+            'Google' => 'https://www.google.com',
+            'Gmail' => 'https://www.gmail.com'
+        ];
+        $data['post'] = [
+            'title' => 'Sample blog post',
+            'created_at' => 'January 1, 2021',
+            'description' => 'Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.'
+        ];
+    return view('dashboard',$data)->with('email',$email);
     }
 }
