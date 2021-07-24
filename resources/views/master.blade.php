@@ -47,6 +47,7 @@
     <body>
         <div class="container">
 @include('layout.navbar')
+@yield('login')
 @yield('register')
 {{-- {{ dd($data) }} --}}
 <main class="container">

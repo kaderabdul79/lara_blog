@@ -51,7 +51,30 @@ class FrontController extends Controller
        return view('register',$data);
        
     }
-    public function processRegistration(){
-        return "thnq";
+    public function processRegistration(Request $request){
+     $email = $request->email;
+     $username = $request->username;
+     $password = $request->password;
+     return "successfully Registration complete";
+    }
+
+    public function showLoginForm(){
+        $data = [];
+        $data['current_time'] = 22;
+         $data['site_title'] = "Practice Blog Site";
+        $data['links'] = [
+            'Facebook' => 'https://www.facebook.com',
+            'Github' => 'https://www.github.com',
+            'Youtube' => 'https://www.youtube.com',
+            'Google' => 'https://www.google.com',
+            'Gmail' => 'https://www.gmail.com'
+        ];
+       return view('login',$data);
+       
+    }
+    public function processLogin(Request $request){
+     $email = $request->email;
+     $password = $request->password;
+    return "Successfully logined";
     }
 }

@@ -19,5 +19,8 @@ use App\Http\Controllers\FrontController;
 Route::get('/', [FrontController::class, 'index']);
 Route::get('/post', [FrontController::class, 'post']);
 
+Route::get('/login', [FrontController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [FrontController::class, 'processLogin']);
+
 Route::get('/register', [FrontController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [FrontController::class, 'processRegistration']);
