@@ -25,6 +25,17 @@
        <th scope="col">{{ $category->status }}</th>
       <th>
           <button type="button" class="btn btn-outline-primary" class="text-dark"><a href="{{ route('categories.edit', $category->id ) }}">Edit</a></button>
+          
+      <div>
+        <form action="{{ route('categories.delete', $category->id ) }}" method="post">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-outline-primary" class="text-dark">
+            Delete</a>
+          </button>
+        </form>
+      </div> 
+      <button type="button" class="btn btn-outline-primary" class="text-dark"><a href="{{ route('categories.index') }}">Back To Category</a></button>
       </th>
     </tr>
   </tbody>
