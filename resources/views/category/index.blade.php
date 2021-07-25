@@ -1,6 +1,7 @@
 @extends('master')
 
 @section('content')
+<button type="button" class="btn btn-outline-primary" class="text-dark"><a href="{{ route('categories.create') }}">Add Category</a></button>
 <div class="col-md-12">
     <h2>Categories</h2>
     <table class="table">
