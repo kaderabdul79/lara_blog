@@ -1,17 +1,19 @@
 @extends('master')
 
 @section('content')
-<button type="button" class="btn btn-outline-primary" class="text-dark"><a href="{{ route('posts.create') }}">Add Category</a></button>
+<button type="button" class="btn btn-outline-primary" class="text-dark"><a href="{{ route('posts.create') }}">Add Post</a></button>
 <div class="col-md-12">
     <h2>Add posts</h2>
     <table class="table">
   <thead>
     <tr>
       <th scope="col">ID</th>
-      {{-- <th scope="col">User ID</th>
-      <th scope="col">Category ID</th> --}}
+      {{-- <th scope="col">User ID</th> --}}
       <th scope="col">Title</th>
       <th scope="col">Content</th>
+      {{-- <th scope="col">Category ID</th> --}}
+      <th scope="col">Category Name</th>
+      <th scope="col">Author Name</th>
        <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
@@ -22,6 +24,10 @@
        <th>{{ $post->id }}</th>
       <th>{{ $post->title }}</th>
       <th>{{ $post->content }}</th>
+      {{-- <th>{{ $post->category_id }}</th> --}}
+      {{-- <th>{{ $post->category }}</th> --}}
+      <th>{{ $post->category->name }}</th>
+      <th>{{ $post->user->username }}</th>
       <th>{{ $post->status == 1 ? 'Active' : 'Inactive' }}</th>
       <th>{{ $post->slug }}</th>
       <th>
