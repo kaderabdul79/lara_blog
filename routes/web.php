@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\CategoryController;
-// Route::get('/test',function(){
-//     return view('register');
-// });
+use App\Http\Controllers\PostController;
 
 Route::get('/', [FrontController::class, 'index']);
 Route::get('/post', [FrontController::class, 'post']);
@@ -24,3 +22,6 @@ Route::get('/categories/{id}',[CategoryController::class,'show'])->name('categor
 Route::get('/categories/{id}/edit',[CategoryController::class,'edit'])->name('categories.edit');
 Route::put('/categories/{id}',[CategoryController::class,'update'])->name('categories.update');
 Route::delete('/categories/{id}',[CategoryController::class,'delete'])->name('categories.delete');
+
+//posts
+Route::resource('/posts',PostController::class);

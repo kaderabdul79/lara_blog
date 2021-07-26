@@ -4,5 +4,8 @@
     <h2>Welcome, {{ $email }}</h2>
 </div>
 <div class="col-md-6 align-center">
-    <h2>Categories</h2>
+    <div>
+        <button type="button" class="btn btn-outline-primary" class="text-dark"><a href="{{ route('categories.index') }}">Category</a></button>
+        <button type="button" class="btn btn-outline-primary" class="text-dark"><a href="{{ route('posts.index') }}">All Post</a></button>
+    </div>
 </div>
